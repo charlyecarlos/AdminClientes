@@ -1,6 +1,8 @@
 
 <?php
 	include './php/DAO/TransactionManager.php';
+	require_once './php/Exception/DAOException.php';
+	require_once './php/Exception/ServiceException.php';
 
 	class ClienteService{
 
@@ -10,7 +12,7 @@
 				$clientedao=$trans->getClienteDAO();
 				$clientedao->insertarCliente($cliente);
 				$trans->closeCommit();
-			}catch(DaoException $e){
+			}catch(DAOException $e){
 				$trans->closeRollback();
 				throw new ServiceException($e->getMessage());
 			}
@@ -22,7 +24,7 @@
 				$clientedao=$trans->getClienteDAO();
 				$clientedao->borrarCliente($cliente);
 				$trans->closeCommit();
-			}catch(DaoException $e){
+			}catch(DAOException $e){
 				$trans->closeRollback();
 				throw new ServiceException($e->getMessage());
 			}
@@ -34,7 +36,7 @@
 				$clientedao=$trans->getClienteDAO();
 				$clientedao->modificarCliente($cliente);
 				$trans->closeCommit();
-			}catch(DaoException $e){
+			}catch(DAOException $e){
 				$trans->closeRollback();
 				throw new ServiceException($e->getMessage());
 			}
@@ -47,7 +49,7 @@
 				$clientedao=$trans->getClienteDAO();
 				$filas=$clientedao->modificarClienteConcurrente($cliente,$clienteInicial);
 				$trans->closeCommit();
-			}catch(DaoException $e){
+			}catch(DAOException $e){
 				$trans->closeRollback();
 				throw new ServiceException($e->getMessage());
 			}
@@ -60,7 +62,7 @@
 				$clientedao=$trans->getClienteDAO();
 				$clientes = $clientedao->recuperarCliente($cliente);
 				$trans->closeCommit();
-			}catch(DaoException $e){
+			}catch(DAOException $e){
 				$trans->closeRollback();
 				throw new ServiceException($e->getMessage());
 			}
@@ -73,7 +75,7 @@
 				$clientedao=$trans->getClienteDAO();
 				$clientes = $clientedao->recuperarBuscarCliente($buscar);
 				$trans->closeCommit();
-			}catch(DaoException $e){
+			}catch(DAOException $e){
 				$trans->closeRollback();
 				throw new ServiceException($e->getMessage());
 			}
@@ -87,7 +89,7 @@
 				$clientedao=$trans->getClienteDAO();
 				$clientes = $clientedao->recuperarClienteOrdenado($orden);
 				$trans->closeCommit();
-			}catch(DaoException $e){
+			}catch(DAOException $e){
 				$trans->closeRollback();
 				throw new ServiceException($e->getMessage());
 			}
@@ -100,7 +102,7 @@
 				$clientedao=$trans->getClienteDAO();
 				$clientes = $clientedao->recuperarTodosCliente();
 				$trans->closeCommit();
-			}catch(DaoException $e){
+			}catch(DAOException $e){
 				$trans->closeRollback();
 				throw new ServiceException($e->getMessage());
 			}

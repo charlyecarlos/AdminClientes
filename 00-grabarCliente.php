@@ -2,6 +2,7 @@
 <?php
 	require_once './php/Domain/cliente.php';
 	require_once './php/Service/ClienteService.php';
+	require_once './php/Exception/ServiceException.php';
 	
 	try{
 		$cliente=Cliente::crearCliente(

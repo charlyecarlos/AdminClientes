@@ -1,6 +1,7 @@
 
 <?php
 require_once './php/Domain/Cliente.php';
+require_once './php/Exception/DAOException.php';
 
 class ClienteDAO {
 	private $con;
@@ -28,7 +29,7 @@ class ClienteDAO {
 		$stmt->execute();
 
 		if ($this->con->errno==1062) {
-			throw new Exception("EL NIF ya existe");		
+			throw new DAOException("EL NIF ya existe");		
 		}
 	}
 
@@ -41,7 +42,7 @@ class ClienteDAO {
 		$stmt->execute();
 		
 		if (!isset($this->con->errno)) {
-			throw new Exception("No se ha podido borrar el cliente, intentelo de nuevo mas tarde.");		
+			throw new DAOException("No se ha podido borrar el cliente, intentelo de nuevo mas tarde.");		
 		}
 	}
 

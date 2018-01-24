@@ -44,8 +44,13 @@ function errorNif(tagInput) {
 	var icoNif = document.getElementById("icoNif")
 	if (validarCif(tagInput.value)) {
 		existeCIF(tagInput.value);
-		nif.className = "form-group has-success has-feedback col-md-6 col-lg-6";
-		icoNif.className = "glyphicon glyphicon-ok form-control-feedback ";
+		if (document.getElementById("exist")!="") {		
+			nif.className = "form-group has-error has-feedback col-md-6 col-lg-6";
+			icoNif.className = "glyphicon form-control-feedback glyphicon-remove";
+		}else{
+			nif.className = "form-group has-success has-feedback col-md-6 col-lg-6";
+			icoNif.className = "glyphicon glyphicon-ok form-control-feedback ";	
+		}
 	} else {
 		nif.className = "form-group has-error has-feedback col-md-6 col-lg-6";
 		icoNif.className = "glyphicon form-control-feedback glyphicon-remove";
@@ -189,7 +194,7 @@ function validarCompleto() {
 	}
 
 	var nif = document.getElementById("dni");
-	if (estaVacio(nif.value)){
+	if (estaVacio(nif.value) && !validarCif(nif) && document.getElementById("exist")!=""){
 		allOk = false;
 		errorNif(nif);
 	}
