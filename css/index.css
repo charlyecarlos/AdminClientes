@@ -1,0 +1,25 @@
+
+th{
+	text-align: center;
+}
+
+h1{
+	color: black;
+	text-decoration: underline;
+}
+
+td{
+	text-align: center;
+}
+
+body{
+	background-color: aliceblue;
+}
+
+table{
+	border: 1px solid lightgray;
+}
+
+a:hover{
+	text-decoration: none;
+}
