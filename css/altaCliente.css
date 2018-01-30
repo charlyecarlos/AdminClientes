@@ -43,6 +43,10 @@ span {
 	right: 15px !important;
 }
 
+#calendar{
+	right: 0 !important;
+}
+
 table {
 	text-align: center;
 }

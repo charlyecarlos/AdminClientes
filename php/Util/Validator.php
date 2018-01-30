@@ -89,5 +89,19 @@
 				$validation=true;
 			return $validation;
 		}
+
+		/**
+		 * Comprueba la fecha con formato dd/mm/yyyy hh/mm/ss
+		 * 
+		 * @param fecha
+		 * @return boolean
+		 */
+		
+		public static function fecha($fecha){
+			$validation=false;
+			if(preg_match("/(\d{2})\/(\d{2})\/(\d{4})$/",$fecha))
+				$validation=true;
+			return $validation;
+		}
 	}
 ?>

@@ -11,20 +11,20 @@
 	<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 
 	<link rel='stylesheet' type='text/css' href='css/altaCliente.css'>
-	<script type='text/javascript' src='js/plantilla.js'></script>
+	<script type='text/javascript' src='js/altaCliente.js'></script>
 	<script type="text/javascript" src="js/validacion.js"></script>
 	<script type="text/javascript" src="js/ajax.js"></script>
 
 	<title>Añadir Cliente</title>
 </head>
 <body>
-		<?php
+	<?php
 		if(isset($_REQUEST["error"])){
 			echo "<div class='alert alert-danger col-md-6 col-md-offset-3 text-center'>";
 			echo '<p class="error">'.$_REQUEST['error'].'</p>';
 			echo '</div>';
 		}
-		?>
+	?>
 	<form onsubmit="return validarCompleto()" action="00-grabarCliente.php" method="post">
 		<div class="row cuadro col-lg-8 col-lg-offset-2">		
 			<div class='col-lg-12 text-center'>

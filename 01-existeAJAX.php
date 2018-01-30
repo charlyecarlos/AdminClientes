@@ -6,10 +6,11 @@
 	try{
 		$response="";
 		$cif=$_REQUEST["q"];
+		$cliente=new Cliente();
+		$cliente->setCIF($cif);
 		$servicioCliente=new ClienteService();
-		$clientes=$servicioCliente->recuperarTodosCliente();
-		foreach ($clientes as $cliente)
-			if($cliente->getCIF()===$cif)
+		$clientes=$servicioCliente->recuperarCliente($cliente);
+			if($cliente!=null)
 				$response= "El CIF ya existe";
 	}catch(ServiceException $e){
 		header('Location: ./altaCliente.php?error='.$e->getMessage());

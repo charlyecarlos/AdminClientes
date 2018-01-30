@@ -195,37 +195,46 @@ function provinciaPorCP(cp) {
 	var res = cp.slice(0, 2);
 	var digit = parseInt(res);
 	switch (digit) {
-		case 01:
+		case '01':
 			return "Alava";
 			break;
-		case 08:
+		case '08':
 			return "Barcelona";
 			break;
-		case 09:
+		case '09':
 			return "Burgos";
 			break;
-		case 15:
+		case '15':
 			return "Coruña";
 			break;
-		case 22:
+		case '22':
 			return "Huesca";
 			break;
-		case 28:
+		case '28':
 			return "Madrid";
 			break;
-		case 29:
+		case '29':
 			return "Málaga";
 			break;
-		case 36:
+		case '36':
 			return "Pontevedra";
 			break;
-		case 43:
+		case '43':
 			return "Tarragona";
 			break;
-		case 50:
+		case '50':
 			return "Zaragoza";
 			break;
 		default:
 			return "Desconocido";
 	}
+}
+
+/**
+* @param fecha
+* @description Cambiar formato fecha de yyyy-MM-dd a dd/MM/yyyy 
+*/
+
+function formatoFecha(fecha){
+  return fecha.replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1');
 }

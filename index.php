@@ -101,5 +101,6 @@
 	<div class="col-lg-2">
 		<a href="altaCliente.php"><span class="glyphicon glyphicon-plus"></span></a>
 	</div>
+	<a id="ir" href="listadoFacturas.php">Ir a Facturas</a>
 </body>
 </html>

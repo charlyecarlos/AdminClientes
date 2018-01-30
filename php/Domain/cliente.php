@@ -34,7 +34,7 @@
 			if (Validator::length($cif,9,9))
 				$this->cif=$cif;
 			else
-				throw new DomainException("El NIF tiene que ser de 9 digitos");
+				throw new DomainException("El CIF tiene que ser de 9 digitos");
 		}
 
 		function getCIF(){

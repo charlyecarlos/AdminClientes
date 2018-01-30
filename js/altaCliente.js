@@ -232,10 +232,3 @@ function validarCompleto() {
 	
 	return allOk;
 }
-
-function rellenarAlert(tipoelemento, elemento) {
-	if (document.getElementById(elemento).value != '')
-		return tipoelemento + ': ' + document.getElementById(elemento).value + '.\n';
-	else
-		return '';
-}
