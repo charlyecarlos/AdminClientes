@@ -1,5 +1,14 @@
 var cont = 2;
 
+function rellenar(){
+	var f = new Date();
+	var mes=f.getMonth()+1;
+	if (mes<10) {
+		mes='0'+mes;
+	}
+	document.getElementById("fech").value=f.getFullYear()+ "-" + mes + "-" + f.getDate();
+}
+
 function errorFactura(tagInput) {
 	var factura = document.getElementById("factura");
 	var icoFact = document.getElementById("icoFact");

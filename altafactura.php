@@ -24,7 +24,7 @@
 	<title>Formulario</title>
 </head>
 
-<body >
+<body onload="rellenar()">
 	<?php
 		if(isset($_REQUEST["error"])){
 			echo "<div class='alert alert-danger col-md-6 col-md-offset-3 text-center'>";
@@ -57,7 +57,6 @@
 					<label class="col-md-4 col-lg-4 col-form-label col-form-label-lg text-left control-label">Fecha*:</label>
 					<div class="col-md-8 col-lg-8">
 						<input type="date" class="form-control text-center" name="fech" id="fech" />
-						<span id="icoFecha"></span>
 					</div>
 				</div>
 			</div>
@@ -89,7 +88,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row	">
+			<div class="row">
 				<div class="form-group has-feedback col-md-6 col-lg-6" id="codp">
 					<label class="col-md-4 col-lg-4 col-form-label col-form-label-lg text-left control-label">CP*:</label>
 					<div class="col-md-8 col-lg-8">
