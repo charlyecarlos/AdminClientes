@@ -60,13 +60,13 @@
 			$trans= new TransactionManager();
 			try{
 				$clientedao=$trans->getClienteDAO();
-				$clientes = $clientedao->recuperarCliente($cliente);
+				$cliente = $clientedao->recuperarCliente($cliente);
 				$trans->closeCommit();
 			}catch(DAOException $e){
 				$trans->closeRollback();
 				throw new ServiceException($e->getMessage());
 			}
-			return $clientes;
+			return $cliente;
 		}
 
 		public function recuperarBuscarCliente($buscar){

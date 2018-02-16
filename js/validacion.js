@@ -193,8 +193,7 @@ function validarIBAN(IBAN) {
  */
 function provinciaPorCP(cp) {
 	var res = cp.slice(0, 2);
-	var digit = parseInt(res);
-	switch (digit) {
+	switch (res) {
 		case '01':
 			return "Alava";
 			break;

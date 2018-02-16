@@ -44,7 +44,7 @@ function errorNif(tagInput) {
 	var icoNif = document.getElementById("icoNif")
 	if (validarCif(tagInput.value)) {
 		existeCIF(tagInput.value);
-		if (document.getElementById("exist")!="") {		
+		if (document.getElementById("exist").innerHTML!="") {		
 			nif.className = "form-group has-error has-feedback col-md-6 col-lg-6";
 			icoNif.className = "glyphicon form-control-feedback glyphicon-remove";
 		}else{
@@ -157,16 +157,6 @@ function soloNumeros(evt) {
 function pintarProvincia() {
 	var cp = document.getElementById("cp");
 	document.getElementById("provincia").value = provinciaPorCP(cp.value);
-}
-
-var hombre=["Moreno","Rubio","Castaño"];
-var mujer=["Morena","Rubia","Castaña"];
-
-function cambiarPelo(tagInput) {
-	if (tagInput.value=='Hombre') 
-		meterOptions(hombre);
-	else 
-		meterOptions(mujer);
 }
 
 function meterOptions(tagInput){

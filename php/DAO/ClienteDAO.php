@@ -115,7 +115,10 @@ class ClienteDAO {
 		
 		$stmt->bind_result($nombre,$direccion,$cp,$ciudad,$provincia,$telefono,$email,$saldo,$obs);
 		$stmt->fetch();
-		$cliente=Cliente::crearCliente($cif,$nombre,$direccion,$cp,$ciudad,$provincia,$telefono,$email,$saldo,$obs);
+		if(isset($nombre))
+			$cliente=Cliente::crearCliente($cif,$nombre,$direccion,$cp,$ciudad,$provincia,$telefono,$email,$saldo,$obs);
+		else
+			$cliente=null;
 		$stmt->close();
 
 		if (!isset($this->con->errno)) 

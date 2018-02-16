@@ -9,11 +9,14 @@
 		$cliente=new Cliente();
 		$cliente->setCIF($cif);
 		$servicioCliente=new ClienteService();
-		$clientes=$servicioCliente->recuperarCliente($cliente);
+		$cliente=$servicioCliente->recuperarCliente($cliente);
 			if($cliente!=null)
 				$response= "El CIF ya existe";
 	}catch(ServiceException $e){
 		header('Location: ./altaCliente.php?error='.$e->getMessage());
+	}catch(DomainException $e){
+		$response=$e->getMessage();
 	}
+
 	echo $response;
 ?>

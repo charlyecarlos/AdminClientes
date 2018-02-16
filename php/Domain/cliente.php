@@ -45,7 +45,7 @@
 			if (Validator::length($nombre,1,50))
 				$this->nombre=$nombre;
 			else
-				throw new DomainException("El Nombre tiene que ser tener entre 1 y 50 digitos");		
+				throw new DomainException($nombre."El Nombre tiene que ser tener entre 1 y 50 digitos");		
 		}
 
 		function getNombre(){

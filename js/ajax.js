@@ -3,7 +3,7 @@
 function existeCIF(tagInput) {
 	var xhttp;
 	if (tagInput.length != 9) { 
-		document.getElementById("exist").innerHTML = "";
+		document.getElementById("exist").innerHTML="";
 	}else{
 		xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
